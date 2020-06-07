@@ -26,9 +26,10 @@ class MainActivity : BaseActivity() {
             //툴린 가게가 어디인지 postion을 이용해서 추출
             val clickedStore = pizzaStoreList[position]
 
-            val myIntent = Intent(this, ViewPizzaStoreActivity::class.java )
-
-            myIntent.putExtra("name",clickedStore)
+            val myIntent = Intent(this, viewPizzaStoreDetailActivity::class.java )
+// 클릭한 가게를 상세조회 화면으로 전달. Serializable  datas  에서 이거 붙여야 한다. 안그러면 putExtra 오류남.
+            myIntent.putExtra("store", clickedStore)
+            startActivity(myIntent)
 
         }
 
