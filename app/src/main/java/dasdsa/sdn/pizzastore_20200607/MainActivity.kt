@@ -1,5 +1,6 @@
 package dasdsa.sdn.pizzastore_20200607
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dasdsa.sdn.pizzastore_20200607.adapters.PizzaStoreAdapter
@@ -20,6 +21,16 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupevents() {
+
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+            //툴린 가게가 어디인지 postion을 이용해서 추출
+            val clickedStore = pizzaStoreList[position]
+
+            val myIntent = Intent(this, ViewPizzaStoreActivity::class.java )
+
+            myIntent.putExtra("name",clickedStore)
+
+        }
 
     }
 

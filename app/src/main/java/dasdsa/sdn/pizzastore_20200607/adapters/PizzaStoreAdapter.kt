@@ -31,7 +31,7 @@ class PizzaStoreAdapter(context: Context, resourceId: Int, list: List<PizzaStore
         //그려진 XML에 실제 피자가게 데이터를 반영
         // 데이터가 반영될 뷰들을 가져오는 작
 
-        // =오른쪽은 pizza_store_list_item.xml 인거다. 거기서 찾는것임. row 가 .xml 인것이지.
+        // 오른쪽은 pizza_store_list_item.xml 인거다. 거기서 찾는것임. row 가 .xml 인것이지.
         val logoImg = row.findViewById<ImageView>(R.id.logoImg)
         val storeNameTxt = row.findViewById<TextView>(R.id.storeNameTxt)
 
