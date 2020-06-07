@@ -27,7 +27,7 @@ class MainActivity : BaseActivity() {
         pizzastore.add(PizzaStore("피자헛", "img_01", "01011112222" ))
         pizzastore.add(PizzaStore("파파존스", "img_01", "020001234" ))
 
-        pizzastoreAdapter = PizzaStoreAdapter(this, R.layout.pizza_store_list_item)
+   //     pizzastoreAdapter = PizzaStoreAdapter(this, R.layout.pizza_store_list_item)
 
 
     }

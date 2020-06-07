@@ -9,7 +9,7 @@ import android.widget.TextView
 import dasdsa.sdn.pizzastore_20200607.R
 import dasdsa.sdn.pizzastore_20200607.datas.PizzaStore
 
-class PizzaStoreAdapter(context: Context, resId: Int, list: List<PizzaStore>) : ArrayAdapter<PizzaStore>(context, resId, list){
+class PizzaStoreAdapter(context: Context, resourceId: Int, list: List<PizzaStore>) : ArrayAdapter<PizzaStore>(context, resourceId, list){
 
 
     val mContext = context
@@ -25,12 +25,12 @@ class PizzaStoreAdapter(context: Context, resId: Int, list: List<PizzaStore>) : 
         }
         val row = tempRow!!
 
-        val pizzastoreInfoTxt = row.findViewById<TextView>(R.id.pizzastoreNameTxt)
+//        val pizzastoreInfoTxt = row.findViewById<TextView>(R.id.pizzastoreNameTxt)
 
-        val data = mList.get(position)
+//        val data = mList.get(position)
 
 
-        pizzastoreInfoTxt.text = "${data.storeName}"
+//        pizzastoreInfoTxt.text = "${data.name}"
 
         return row
     }
