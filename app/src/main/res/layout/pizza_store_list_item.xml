@@ -25,6 +25,7 @@
             android:id="@+id/pizzastoreNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="피자가게 이름"
             android:textSize="17sp" />
 
