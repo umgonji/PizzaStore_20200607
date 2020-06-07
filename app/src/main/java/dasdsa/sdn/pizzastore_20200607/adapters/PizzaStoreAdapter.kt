@@ -1,12 +1,14 @@
 package dasdsa.sdn.pizzastore_20200607.adapters
 
 import android.content.Context
+import android.media.tv.TvContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import dasdsa.sdn.pizzastore_20200607.R
 import dasdsa.sdn.pizzastore_20200607.datas.PizzaStore
 
@@ -38,8 +40,10 @@ class PizzaStoreAdapter(context: Context, resourceId: Int, list: List<PizzaStore
         val data = mList.get(position)
 
         //data안에 있는 가게이름을 => storeNameTxt의 글자로 설정
-
         storeNameTxt.text = data.name
+
+        //data안에 있는 logoUrl을 이용해서 => 이미지를 (웹에서)다운받아서 => logoImg 에 뿌려주기
+        Glide.with(mContext).load(data.logoUrl).into(logoImg)
 
         return row
     }
