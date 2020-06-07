@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
 import dasdsa.sdn.pizzastore_20200607.datas.PizzaStore
 import kotlinx.android.synthetic.main.activity_view_pizza_store_detail.*
 import kotlinx.android.synthetic.main.activity_view_pizza_store_detail.logoImg
-import kotlinx.android.synthetic.main.pizza_store_list_item.*
+import java.util.jar.Manifest
 
 class viewPizzaStoreDetailActivity : BaseActivity() {
 
@@ -40,6 +41,11 @@ class viewPizzaStoreDetailActivity : BaseActivity() {
                 }
             }
 
+            //실제권한 체크 실행
+            TedPermission.with((mContext))
+                .setPermissionListener(pl)
+                .setPermissions(android.Manifest.permission.CALL_PHONE)
+                .check()
         }
 
     }
@@ -52,7 +58,7 @@ class viewPizzaStoreDetailActivity : BaseActivity() {
 
         //대입 된 피자 가게 변수의 데이터들을 이용해서 화면에 출력
         Glide.with(mContext).load(mPizzaStore.logoUrl).into(logoImg)
-        storeNameTxt.text = mPizzaStore.name
+        storeNameTxt.text =  mPizzaStore.name
         phoneNumTxt.text = mPizzaStore.PhoneNum
 
     }
