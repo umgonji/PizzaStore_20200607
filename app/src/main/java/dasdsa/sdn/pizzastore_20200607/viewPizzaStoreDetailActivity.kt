@@ -1,8 +1,11 @@
 package dasdsa.sdn.pizzastore_20200607
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.gun0912.tedpermission.PermissionListener
 import dasdsa.sdn.pizzastore_20200607.datas.PizzaStore
 import kotlinx.android.synthetic.main.activity_view_pizza_store_detail.*
 import kotlinx.android.synthetic.main.activity_view_pizza_store_detail.logoImg
@@ -25,7 +28,17 @@ class viewPizzaStoreDetailActivity : BaseActivity() {
     override fun setupevents() {
 
         callBtn.setOnClickListener {
-            val pl = object : permissionl
+            val pl = object : PermissionListener {
+                override fun onPermissionGranted() {
+                    val myUri = Uri.parse("tel:${mPizzaStore.PhoneNum}")
+                    val myIntent = Intent(Intent.ACTION_CALL, myUri)
+                    startActivity(myIntent)
+                }
+
+                override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+
+                }
+            }
 
         }
 
